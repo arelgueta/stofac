@@ -13,6 +13,7 @@ require_once("models/recibo_model.php");
 require_once("models/recibodetalle_model.php");
 require_once("models/rutas_model.php");
 require_once("models/destinos_model.php");
+require_once("models/piezas_model.php");
 
 //llamadas a librerias
 require_once("views/lib/obj_soporte.php");
@@ -35,7 +36,146 @@ class mvc_controller{
         
         //Llamada a la vista
         require_once("views/principal.php");
-    }               
+    }  
+															// PIEZAS
+    public function listar_pieza(){
+        $piez = new Pieza();
+	$datos_pieza = $piez->listar();
+  	
+	$prod= new Producto();
+	$datos_prod = $prod->gets();
+   
+        //debo recorrer el array y guardar cada linea de detalle
+         foreach($datos_prod as $fila){    
+		//	var_dump($fila);
+		//	echo "<br>";
+            //$datos_usuario = $det->set2($fila, $id_nuevo);
+            //al cargar el producto, tengo que descontar del stock la cantidad comprada
+            // lo que es un update sobre la tabla producto            
+           // $datos_prod = $prod->edit_stock($fila['id_producto'],$fila['cantidad']);                    
+        }         
+        // Aca tiene que ir el Update en ruta
+        //muestro el listado de facturas
+        //$datos_factura = $fac->listar();
+        //Llamada a la vista
+       // require_once("views/piezas2.php");
+
+
+//Llamada a la vista
+        require_once("views/piezas.php");
+    }      
+   
+    public function buscar_pieza($id){
+        $fpiez = new Pieza();
+        $datos_factura = $piez->get($id);
+
+        //Llamada a la vista
+        require_once("views/piezas.php");
+    }     
+    
+    public function cargar_pieza($valores1, $valores2){      
+        //cargo la cabecera de la pieza
+        $fac = new Pieza();        
+        $id_nuevo= $fac->set2($valores1);
+        
+        //$id_nuevo = $fac->ultimo_id;
+        //cargo el detalle de la factura
+        
+        //$det = new FacturaDetalle(); 
+        //$prod = new Producto();
+        //debo recorrer el array y guardar cada linea de detalle
+       // foreach($valores2 as $fila){    
+			////var_dump($fila);
+			//echo "<br>";
+         //   $datos_usuario = $det->set2($fila, $id_nuevo);
+            //al cargar el producto, tengo que descontar del stock la cantidad comprada
+            // lo que es un update sobre la tabla producto            
+           // $datos_prod = $prod->edit_stock($fila['id_producto'],$fila['cantidad']);                    
+    //    }         
+        // Aca tiene que ir el Update en ruta
+        //muestro el listado de facturas
+        //$datos_factura = $fac->listar();
+        //Llamada a la vista
+       // require_once("views/piezas2.php");
+    }
+public function cargar_pieza1($valores1, $valores2){      
+        //cargo la cabecera de la factura
+        $fac = new Pieza();        
+        $id_nuevo= $fac->set2($valores1);
+       // $id_nuevo= $fac->set2a($valores1);
+        
+//		$ruta= new Ruta();
+//		$rut=$ruta->vta_ruta($valores1,$id_nuevo);
+		
+  //      $det = new FacturaDetalle(); 
+    //    $prod = new Producto();
+        //debo recorrer el array y guardar cada linea de detalle
+      //  foreach($valores2 as $fila){              
+        //    $datos_usuario = $det->set2($fila, $id_nuevo);
+            //al cargar el producto, tengo que descontar del stock la cantidad comprada
+            // lo que es un update sobre la tabla producto            
+          //  $datos_prod = $prod->edit_stock($fila['id_producto'],$fila['cantidad']);                    
+        //}         
+       //muestro el listado de facturas
+        //$datos_factura = $fac->listar();
+        //Llamada a la vista
+       require_once("views/piezas2.php");
+    }	
+    
+    public function imprimir_pieza($id){      
+        //busco la cabecera de la factura
+        $fac = new Pieza();        
+        $datos_factura = $fac->listar_pieza($id);
+        
+        //cargo el detalle de la factura        
+       // $det = new FacturaDetalle();
+        //$datos_factdetalle = $det->listar($id);
+    
+       // require_once("views/comprobante.php");
+    }           
+    
+    public function update_pieza($valores){
+        $fac = new Pieza();
+        $datos_factura = $fac->edit($valores);
+        
+        $datos_factura = $fac->listar();
+        //Llamada a la vista
+        require_once("views/piezas.php");
+    }
+    
+    public function eliminar_pieza($valores){
+        $fac = new Pieza();
+        $datos_factura = $fac->delete($valores);
+        
+        $datos_factura = $fac->listar();
+        //Llamada a la vista
+        require_once("views/piezas.php");
+    }
+	
+   /*  public function listar_datos_fact1($id,$id_rutas){
+        $cli = new Cliente();
+        $datos_cli = $cli->get($id);
+        //////var_dump($datos_cli);
+        $product = new Producto();
+        $datos_product = $product->gets();
+        
+        //Llamada a la vista
+        require_once("views/facturas2.php");
+   }*/          
+		
+   /* public function listar_datos_fact(){
+        $cli = new Cliente();
+        $datos_cli = $cli->gets();
+        
+        $product = new Producto();
+        $datos_product = $product->gets();
+        
+        //Llamada a la vista
+        require_once("views/facturas.php");
+    }          
+
+    */
+
 																	// PRODUCTOS
     public function listar_productos(){
         $prod = new Producto();

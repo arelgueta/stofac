@@ -14,7 +14,7 @@
                         <tr>
                           <th>ID</th>
                           <th>Usuario</th>
-                          <th>Clave</th>
+             <!--             <th>Clave</th>   -->
                           <th>Nombre</th>
                           <th>Apellido</th>
                           <th>email</th>
@@ -27,7 +27,7 @@
                         <tr>
                           <td>{id_usuario}</td>
                           <td>{usuario}</td>	
-                          <td>{clave}</td>
+                  <!--        <td>{clave}</td>  -->
                           <td>{nombre}</td>
                           <td>{apellido}</td>	
                           <td>{email}</td>

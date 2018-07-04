@@ -82,7 +82,7 @@ class Usuario extends DBAbstractModel {
         foreach ($usuario_data as $campo=>$valor):
             $$campo = $valor;
         endforeach;
-        $this->query = " INSERT INTO usuarios (usuario, clave, nombre, apellido, email, id_tipo) VALUES ('$usuario', '$clave', '$nombre', '$apellido','$email',$id_tipo) ";
+        $this->query = " INSERT INTO usuarios (usuario, clave, nombre, apellido, email, id_tipo) VALUES ('$usuario', sha1('$clave'), '$nombre', '$apellido','$email',$id_tipo) ";
         $this->execute_single_query();
     }
     
@@ -90,7 +90,7 @@ class Usuario extends DBAbstractModel {
         foreach ($usuario_data as $campo=>$valor):
             $$campo = $valor;
         endforeach;
-        $this->query = " UPDATE usuarios SET usuario = '$usuario', clave = '$clave', nombre = '$nombre' , apellido = '$apellido',email = '$email', id_tipo = $id_tipo WHERE id_usuario = $id_usuario ";
+        $this->query = " UPDATE usuarios SET usuario = '$usuario', clave = sha1('$clave'), nombre = '$nombre' , apellido = '$apellido',email = '$email', id_tipo = $id_tipo WHERE id_usuario = $id_usuario ";
        // $query = " UPDATE usuarios SET usuario = '$usuario', clave = '$clave', nombre = '$nombre' , apellido = '$apellido',email = '$email', id_tipo = $id_tipo WHERE id_usuario = $id_usuario ";
 		////echo $query;
         $this->execute_single_query();

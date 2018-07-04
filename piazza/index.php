@@ -233,6 +233,67 @@ if (isset($_GET['action'])){
             }
     break;
 
+    case 'piezas':     												// PIEZAS
+            $opcion = '';
+            if (isset($_REQUEST['buscar'])){
+                $opcion = 'buscar';
+            }
+            if (isset($_REQUEST['update'])){
+                $opcion = 'update';
+            }
+            if (isset($_REQUEST['agregar'])){
+                $opcion = 'agregar';
+            }
+            
+            if (isset($_REQUEST['insert'])){
+                $opcion = 'insert';
+            }
+            
+            if (isset($_REQUEST['eliminar'])){
+                $opcion = 'eliminar';
+            }            
+            
+            switch ($opcion) {
+                case '':
+                    $mvc->listar_pieza();
+                break;
+            
+                case 'agregar':
+                    $mvc->listar_pieza();
+                break;               
+            
+                case 'insert':
+                    $new_pieza = array(                   
+                    'nombre'=>$_REQUEST['nombre'],
+                    'descripcion'=>$_REQUEST['descripcion']
+                    );  
+                    
+                    $mvc->cargar_pieza($new_pieza);
+                break;            
+
+                case 'buscar':
+                    $mvc->buscar_pieza($_GET['buscar']);                     
+                break;
+
+                case 'update':
+                    $edit_pieza = array(
+                    'id_categoria'=>$_REQUEST['update'],
+                    'nombre'=>$_REQUEST['nombre'],
+                    'descripcion'=>$_REQUEST['descripcion'] 
+                    );                    
+                    $mvc->update_pieza($edit_pieza);                    
+                break;
+            
+                case 'eliminar':
+                    $mvc->eliminar_pieza($_GET['eliminar']);                     
+                break;            
+
+                default:
+                    $mvc->listar_piezas();
+                break;
+            }
+	    break;
+
     case 'clientes':     												// CLIENTES
             $opcion = '';
             if (isset($_REQUEST['buscar'])){

@@ -318,9 +318,69 @@ INSERT INTO `usuarios` (`id_usuario`, `usuario`, `clave`, `nombre`, `apellido`, 
 (4, 'jaime', '123456', 'jaime', 'jaime', 'jaime@jaime.com', 2),
 (7, 'pepe', 'pepe', 'sapo', 'pepe', 'sapo@pepe.com', 2);
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pieza`
+--
+
+CREATE TABLE `piezas` (
+  `id_pieza` int(11) NOT NULL,
+  `nombre` varchar(150) NOT NULL,
+  `descripcion` varchar(150) NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `cantidadMinima` int(11) NOT NULL
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `pieza`
+--
+
+INSERT INTO `piezas` (`id_pieza`, `nombre`, `descripcion`, `cantidad`, `cantidadMinima`) VALUES
+(1, 'pieza1', 'Funciona en bomba 1',23,8),
+(2, 'piezab', 'funciona en bomba 1',52,4),
+(3, 'piezaw', 'funciona en bomba 3',22,5);
+
+-- --------------------------------------------------------
+--
+-- Estructura de tabla para la tabla `PiezaXProducto`
+--
+
+CREATE TABLE `PiezaXProducto` (
+  `id_piezaProducto` int(11) NOT NULL,
+  `id_pieza` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `cantidadPieza` int(11) NOT NULL
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `PiezaXProducto`
+--
+
+INSERT INTO `PiezaXProducto` (`id_piezaProducto`, `id_pieza`, `id_producto`, `cantidadPieza`) VALUES
+(1,2,5,2),
+(2,1,3,3),
+(3,3,2,12);
+
+
+-- --------------------------------------------------------
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `PiezaXProducto`
+--
+ALTER TABLE `PiezaXProducto`
+  ADD PRIMARY KEY (`id_piezaProducto`);
+
+--
+-- Indices de la tabla `pieza`
+--
+ALTER TABLE `piezas`
+  ADD PRIMARY KEY (`id_pieza`);
 
 --
 -- Indices de la tabla `categoria`
@@ -400,12 +460,17 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+--
+-- AUTO_INCREMENT de la tabla `PiezaXProducto`
+--
+ALTER TABLE `PiezaXProducto`
+  MODIFY `id_piezaProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de la tabla `categoria`
+-- AUTO_INCREMENT de la tabla `pieza`
 --
-ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `piezas`
+  MODIFY `id_pieza` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `cliente`
 --

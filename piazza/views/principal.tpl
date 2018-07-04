@@ -26,9 +26,10 @@
                 <!-- END BLOCK : form_login -->
                 
                 <!-- START BLOCK : bienvenido -->
-                    <h2 class="sub-header"><i>Distribuidora del Pilar</i></h2><br><br>
-                    <h4 class="sub-header">Bienvenido</h4>
-                    <p> Bienvenido! Has iniciado sesion: {usuario_logeado}</p>
+                    <h2 class="sub-header"><i>PIAZZA</i></h2><br>
+                    <h3 class="subheader"><i>Bombas Industriales</i><h3>
+		    <h4 class="sub-header">Bienvenido</h4>
+                <!--    <p> Bienvenido! Has iniciado sesion: {usuario_logeado}</p> -->
                     <p> <a href="index.php" class="btn btn-success">{ingreso}</a></p>
                 <!-- END BLOCK : bienvenido -->           
                 

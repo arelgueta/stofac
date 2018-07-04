@@ -44,14 +44,14 @@ if (isset($_GET['action'])){
  
 switch ($action) {
     case 'login':
-        if(trim($_POST['usuario'])<>'' and trim($_POST['clave'])<>''){
+        if(trim($_POST['usuario'])<>'' and trim(sha1($_POST['clave']))<>''){
             $error='';
             //aqui busco el usuario y compruebo si la clave es la que corresponde
 
             if (trim($_POST['usuario']) <> $usu_log) {
                     $error = 'El usuario no se corresponde con uno valido ' . $valor;
             }
-            if (trim($_POST['clave']) <> $cla_log) {
+            if (trim(sha1($_POST['clave'])) <> $cla_log) {
                     $error = $error . ' La clave es incorrecta ' . $valor;
                 
             }

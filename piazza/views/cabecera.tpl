@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Distribuidora del Pilar</title>
+    <title>Bombas Piazza</title>
 
 	<script src="views/bootstrap/js/jquery.min.js"></script>
     <script src="views/bootstrap/js/bootstrap.min.js"></script>
@@ -27,7 +27,7 @@
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="index.php" class="navbar-brand">Facturacion</a>
+          <a href="index.php" class="navbar-brand">PIAZZA Bombas Industriales</a>
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -39,26 +39,26 @@
               
             <!-- START BLOCK : m_vender -->  
             <li>
-              <a href="index.php?action=facturas">Facturar</a>
+              <a href="index.php?action=facturas">Ventas</a>
             </li>    
-              <li class="dropdown">
+<!--              <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes" aria-expanded="false">Rutas <span class="caret"></span></a>
               <ul class="dropdown-menu" aria-labelledby="themes">
               
              <li><a href="index.php?action=rutas">Listar Rutas</a></li>
                 <li><a href="index.php?action=rutas&agregar=si">Rutas Clientes </a></li>
-                <!--<li><a href="index.php?action=rutas&hojaRuta">Hoja de Ruta </a></li>
-                <li><a href="index.php?action=rutas&hojaCarga">Hoja de Carga</a></li> -->
+                <li><a href="index.php?action=rutas&hojaRuta">Hoja de Ruta </a></li>
+                <li><a href="index.php?action=rutas&hojaCarga">Hoja de Carga</a></li> 
                 <li><a href="index.php?action=rutas&hojas">Hojas</a></li> 
 			 </ul>
             </li>   
-            <!-- END BLOCK : m_vender -->
+ -->           <!-- END BLOCK : m_vender -->
             
             <!-- START BLOCK : m_acceso -->    
 
               <!--  <li><a href="index.php?action=estadisticas">Estadisticas</a></li>			-->
 			<li>
-              <a href="index.php?action=recibos">Compra de Stock</a>
+              <a href="index.php?action=recibos">Ingreso de Stock</a>
             </li>     
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes" aria-expanded="false">Administracion <span class="caret"></span></a>
@@ -68,8 +68,9 @@
                 <li class="divider"></li>
                 <li><a href="index.php?action=productos">Productos</a></li>
                 <li><a href="index.php?action=categorias&agregar=si">Categorias</a></li>
-                <li class="divider"></li>
-                <li><a href="index.php?action=destinos">Agregar nuevo destino</a></li>
+                <li><a href="index.php?action=piezas&agregar=si">ProductosXPiezas</a></li>
+               <!-- <li class="divider"></li>
+                <li><a href="index.php?action=destinos">Agregar nuevo destino</a></li>-->
               </ul>
             </li>
             <li class="dropdown">

@@ -2,13 +2,13 @@
     <footer class="footer">
       <div class="container">
             <div class="col-md-4">
-                <p class="text-muted text-left credit">Desarrollado por: José Morelli</p>
+                <p class="text-muted text-left credit">web</p>
             </div>
             <div class="col-md-4">
-                <p class="text-muted text-left credit">Para la Empresa: Distribuidora del Pilar</p>
+                <p class="text-muted text-left credit">Piazza Bombas Industriales</p>
             </div>
             <div class="col-md-4">
-                <p class="text-muted text-right credit">Facturaci&oacute;n Versi&oacute;n 2.7</p>
+                <p class="text-muted text-right credit">Versi&oacute;n 1.0</p>
             </div>
       </div>
     </footer>        
